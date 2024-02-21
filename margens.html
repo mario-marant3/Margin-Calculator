@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Margens</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="box">
+        <h1>CALCULADORA DE MARGENS</h1>
+        <div class="divisao" style="color:white;">
+            <p>PREÇO: <input id="preco" onclick="ativarflag(1)" /> ( € )</p>
+        </div>
+        <div class="divisao" style="color:white;">
+            <p>MARGEM: <input id="margem" onclick="ativarflag(2)" /> ( % )</p>
+        </div>
+        <div class="divisao">
+            <p style="color:white;">PREÇO c/ IMPOSTO?
+                <label class="switch">
+                    <input type="checkbox" id="iva" onclick="comSemIva()">
+                    <span class="slider"></span>
+                </label>
+                <p id="sIva" class="semIVA">s/ IVA</p>
+                <p id="cIva" class="comIVA">c/ IVA</p>
+            </p>
+        </div>
+        <div style="margin: 0pt auto;">
+            <button onclick="calculadora('7')">7</button>
+            <button onclick="calculadora('8')">8</button>
+            <button onclick="calculadora('9')">9</button>
+            <button onclick="calculadora('b')" style="background-color: rgb(102, 102, 228);">←</button>
+        </div>
+        <div style="margin: 0pt auto;">
+            <button onclick="calculadora('4')">4</button>
+            <button onclick="calculadora('5')">5</button>
+            <button onclick="calculadora('6')">6</button>
+            <button onclick="calculadora('0')">0</button>
+        </div>
+        <div style="margin: 0pt auto;">
+            <button onclick="calculadora('1')">1</button>
+            <button onclick="calculadora('2')">2</button>
+            <button onclick="calculadora('3')">3</button>
+            <button onclick="calculadora('p')" style="background-color: rgb(102, 102, 228);">.</button>
+        </div>
+        <div style="margin: 0pt auto;">
+            <button style="width: 480px; background-color:lightsalmon;" onclick="calcularMargens()">CALCULAR</button>
+        </div>
+        <span id="resultCompraWithIVA"></span>
+    </div>
+    <div class="resultados" id="resultados">
+        <div class="divisao">
+           <h2>
+            RESULTADOS
+           </h2>
+        </div>
+        <div class="divisao">
+            <p>Preço c/ IVA: <span id="precoComIva"></span> €</p>
+        </div>
+        <div class="divisao">
+            <p>Preço s/ IVA: <span id="precoSemIva"></span> €</p>
+        </div>
+        <div class="divisao">
+            <p>Preço c/ Margem c/ IVA: <span id="resultadoMargemIva"></span> €</p>
+        </div>
+        <div class="divisao">
+            <p>Preço c/ Margem s/ IVA: <span id="resultadoMargemSemIva"></span> €</p>
+        </div>
+        <div class="divisao">
+            <p>Lucro Líquido: <span id="lucroLiquido"></span> €</p>
+        </div>
+        <div class="divisao">
+            <p>Lucro Bruto: <span id="lucroBruto"></span> €</p>
+        </div>
+    </div>
+    <script src="script.js" type="text/javascript"></script>
+</body>
+</html>
